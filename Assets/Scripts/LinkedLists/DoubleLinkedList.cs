@@ -135,6 +135,26 @@ public class DoubleLinkedList<T> //: MonoBehaviour
             Evaluator = Evaluator.Prev;
         }
     }
+    public void TraverseInOrder(Node<T> Evaluator, Action<Node<T>> action)
+    {
+        if (Evaluator == null)
+        {
+            Debug.Log("Recorriste toda la lista"); ;
+            return;
+        }
+        action(Evaluator);
+        TraverseInOrder(Evaluator.Next, action);
+    }
+    public void TraverseInReverse(Node<T> Evaluator , Action<Node<T>> action)
+    {
+        if(Evaluator == null)
+        {
+            Debug.Log("Volste a recorrer la lista");
+            return;
+        }
+        action(Evaluator);
+        TraverseInOrder(Evaluator.Prev, action);    
+    }
 
 
 }

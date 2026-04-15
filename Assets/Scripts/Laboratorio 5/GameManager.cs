@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public CustomDoubleLinkedList snapshotSystem =new();
     public Player player;
+    public Enemies enemies;
     private void Awake()
     {
         Instance = this;

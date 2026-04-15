@@ -41,6 +41,7 @@ public class RecursiveClass : MonoBehaviour
         print(n - 1);
         Debug.Log("Saliendo" + n);
     }
+
     [Button]
     public int SumExpress(int n)
     {
@@ -48,6 +49,7 @@ public class RecursiveClass : MonoBehaviour
             return 1;
         return SumExpress(n - 1) + SumExpress(n -1);
     }
+
     [Button]
     public int Factorial(int n)
     {

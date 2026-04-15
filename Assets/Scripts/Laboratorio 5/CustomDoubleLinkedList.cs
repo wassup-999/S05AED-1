@@ -7,8 +7,8 @@ public class CustomDoubleLinkedList : DoubleLinkedList<SnapshotNode>
     {
         if(pointer == tail)
         {
-            SnapshotNode snapshot = new SnapshotNode(GameManager.Instance.player, Count);
-            base.Add(snapshot);
+            SnapshotNode snapshot = new SnapshotNode(GameManager.Instance.player, Count );           
+            base.Add(snapshot);            
             ResetPointer();
         }
         else
