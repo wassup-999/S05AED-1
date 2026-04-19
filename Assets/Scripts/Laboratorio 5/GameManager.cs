@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public CustomDoubleLinkedList snapshotSystem =new();
     public CustomDoubleLinkedListEnemy snapshotSystemEnemy = new();
     public Player player;
-    public Enemies enemies;
+    public Enemy enemies;
     private void Awake()
     {
         instance = this;

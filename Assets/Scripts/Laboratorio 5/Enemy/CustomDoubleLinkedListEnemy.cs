@@ -40,7 +40,7 @@ public class CustomDoubleLinkedListEnemy : DoubleLinkedList<SnapshotNode>
         if (pointer.Next == null) return;
         pointer = pointer.Next;
     }
-    public void LoadTurn(Enemies enemy)
+    public void LoadTurn(Enemy enemy)
     {
         Debug.Log("Cargando el Turno" + pointer.Value.EnemyTurn);
         enemy.transform.position = pointer.Value.enemyPosition;

@@ -29,7 +29,7 @@ public class SnapshotNode
         spdbuf = player.spdbuf;              
     }
     
-    public SnapshotNode(Enemies enemy , int turn)
+    public SnapshotNode(Enemy enemy , int turn)
     {
         EnemyTurn = turn; 
         
