@@ -31,13 +31,9 @@ public class SnapshotNode
     
     public SnapshotNode(Enemies enemy , int turn)
     {
-        EnemyTurn = turn;
-
-        Vector3 dir = (GameManager.instance.player.transform.position - enemyPosition).normalized;
-        //enemy.transform.position += dir;   
+        EnemyTurn = turn; 
+        
         enemyPosition = enemy.transform.position;       
-            
-
         enemyRotation = enemy.transform.rotation.eulerAngles;
         Enmyspd = enemy.Enmyspd;
         Enmydmg = enemy.Enmydmg;
