@@ -502,8 +502,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b10dc445f63181640b4cfbf2e64e94e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemies
-  Enmyspd: 0
+  Enmyspd: 2
   Enmydmg: 0
+  Durability: 0
 --- !u!136 &652364018
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -593,7 +594,7 @@ Transform:
   m_GameObject: {fileID: 652364016}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.993, y: 0.838, z: -5.9}
+  m_LocalPosition: {x: -5.993, y: 0.838, z: -5.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -725,7 +726,9 @@ GameObject:
   - component: {fileID: 1325290502}
   - component: {fileID: 1325290501}
   - component: {fileID: 1325290500}
+  - component: {fileID: 1325290506}
   - component: {fileID: 1325290504}
+  - component: {fileID: 1325290505}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -822,7 +825,7 @@ Transform:
   m_GameObject: {fileID: 1325290499}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.151, y: 1.14, z: 3.2700005}
+  m_LocalPosition: {x: 6.151, y: 1.14, z: 6.2700005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -841,9 +844,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97b126ac3a62f6c49ab26a7bfc14f395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  playerController: {fileID: 0}
+  playerMechanics: {fileID: 0}
   str: 0
   dtx: 0
   spd: 0
+--- !u!114 &1325290505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325290499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dfd2aa0b4285ef42904af057f63af0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  playerController: {fileID: 0}
+  playerMechanics: {fileID: 0}
+  movInputs: {x: 0, y: 0}
+  moveSpeed: 5
+--- !u!114 &1325290506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325290499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed82f7fc6f00d94a88f75cbec414255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
+  playerController: {fileID: 1325290505}
+  playerMechanics: {fileID: 1325290504}
 --- !u!43 &1646475011
 Mesh:
   m_ObjectHideFlags: 0
@@ -2336,6 +2371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   player: {fileID: 1325290504}
+  enemies: {fileID: 652364017}
 --- !u!1 &2133170454
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SnapshotNode 
@@ -13,7 +14,8 @@ public class SnapshotNode
     //Enemy
     public int EnemyTurn;
     public Vector3 enemyPosition;
-    public Vector3 enemyRotation;
+    public Vector3 enemyRotation;    
+    
     public int Enmyspd;
     public int Enmydmg;
     public SnapshotNode(Player player, int turn )
@@ -30,9 +32,15 @@ public class SnapshotNode
     public SnapshotNode(Enemies enemy , int turn)
     {
         EnemyTurn = turn;
-        enemyPosition = enemy.transform.position;
+
+        Vector3 dir = (GameManager.instance.player.transform.position - enemyPosition).normalized;
+        //enemy.transform.position += dir;   
+        enemyPosition = enemy.transform.position;       
+            
+
         enemyRotation = enemy.transform.rotation.eulerAngles;
         Enmyspd = enemy.Enmyspd;
         Enmydmg = enemy.Enmydmg;
+               
     }
 }
