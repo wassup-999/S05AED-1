@@ -4,14 +4,14 @@ public class CustomDoubleLinkedListEnemy : DoubleLinkedList<SnapshotNode>
 {
     
     public Node<SnapshotNode> pointer;
-    public void SaveTurn()
+    public void SaveTurnEnemy()
     {
         if (pointer == tail)
         {           
 
             SnapshotNode snapshot2 = new SnapshotNode(GameManager.instance.enemies, Count);
             base.Add(snapshot2);
-            ResetPointer();
+            ResetPointerEnemy();
         }
         else
         {
@@ -21,21 +21,21 @@ public class CustomDoubleLinkedListEnemy : DoubleLinkedList<SnapshotNode>
             
 
             base.Add(snapshot2);
-            ResetPointer();
+            ResetPointerEnemy();
         }
     }
-    public void ResetPointer()
+    public void ResetPointerEnemy()
     {
         pointer = tail;
 
     }
-    public void MoveBackwards()
+    public void MoveBackwardsEnemy()
     {
         if (pointer.Prev == null) return;
 
         pointer = pointer.Prev;
     }
-    public void MoveForward()
+    public void MoveForwardEnemy()
     {
         if (pointer.Next == null) return;
         pointer = pointer.Next;
