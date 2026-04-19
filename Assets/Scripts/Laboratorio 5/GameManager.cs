@@ -8,8 +8,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public CustomDoubleLinkedList snapshotSystem =new();
+    //public CustomDoubleLinkedListEnemy snapshotSystemEnemy = new();
     public Player player;
-    public Enemies enemies;
+    //public Enemies enemies;
     private void Awake()
     {
         Instance = this;
@@ -27,23 +28,28 @@ public class GameManager : MonoBehaviour
     public void SaveTurn()
     {
         snapshotSystem.SaveTurn();
+        
+        //snapshotSystemEnemy.SaveTurn();
     }
     
     public void LoadTurn()
     {
         snapshotSystem.LoadTurn(player);
+        //snapshotSystemEnemy.LoadTurn(enemies);
     }
 
     [Button]
     public void NexTurn()
     {
         snapshotSystem.MoveForward();
+        //snapshotSystemEnemy.MoveForward();
         LoadTurn();
     }
     [Button]
     public void PrevTurn()
     {
         snapshotSystem.MoveBackwards();
+        //snapshotSystemEnemy.MoveBackwards();
         LoadTurn();
     }
 }

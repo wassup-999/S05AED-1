@@ -2,20 +2,25 @@ using UnityEngine;
 
 public class CustomDoubleLinkedListEnemy : DoubleLinkedList<SnapshotNode>
 {
+    /*
     public Node<SnapshotNode> pointer;
     public void SaveTurn()
     {
         if (pointer == tail)
-        {
-            SnapshotNode snapshot = new SnapshotNode(GameManager.Instance.enemies, Count);
-            base.Add(snapshot);
+        {           
+
+            SnapshotNode snapshot2 = new SnapshotNode(GameManager.Instance.enemies, Count);
+            base.Add(snapshot2);
             ResetPointer();
         }
         else
         {
             RemoveFromPosition(pointer);
-            SnapshotNode snapshot = new SnapshotNode(GameManager.Instance.enemies, Count);
-            base.Add(snapshot);
+            
+            SnapshotNode snapshot2 = new SnapshotNode(GameManager.Instance.enemies, Count); 
+            
+
+            base.Add(snapshot2);
             ResetPointer();
         }
     }
@@ -42,5 +47,5 @@ public class CustomDoubleLinkedListEnemy : DoubleLinkedList<SnapshotNode>
         enemy.transform.eulerAngles = pointer.Value.enemyRotation;
         enemy.Enmydmg = pointer.Value.Enmydmg;
         enemy.Enmyspd = pointer.Value.Enmydmg;        
-    }
+    }*/
 }

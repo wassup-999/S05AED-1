@@ -3,12 +3,13 @@ using Sirenix.OdinInspector;
 public class CustomDoubleLinkedList : DoubleLinkedList<SnapshotNode>
 {
     public Node<SnapshotNode> pointer;
-    public  void SaveTurn()
+    public void SaveTurn()
     {
-        if(pointer == tail)
+       
+        if (pointer == tail)
         {
-            SnapshotNode snapshot = new SnapshotNode(GameManager.Instance.player, Count );           
-            base.Add(snapshot);            
+            SnapshotNode snapshot = new SnapshotNode(GameManager.Instance.player, Count);
+            base.Add(snapshot);
             ResetPointer();
         }
         else
@@ -18,6 +19,8 @@ public class CustomDoubleLinkedList : DoubleLinkedList<SnapshotNode>
             base.Add(snapshot);
             ResetPointer();
         }
+
+
     }
     public void ResetPointer()
     {

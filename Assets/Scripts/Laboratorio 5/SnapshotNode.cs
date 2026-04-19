@@ -9,12 +9,13 @@ public class SnapshotNode
     public int dtx;
     public int spd;
 
+    /*
     //Enemy
     public int EnemyTurn;
     public Vector3 enemyPosition;
     public Vector3 enemyRotation;
     public int Enmyspd;
-    public int Enmydmg;
+    public int Enmydmg;*/
     public SnapshotNode(Player player, int turn )
     {
         Turn = turn;
@@ -25,6 +26,7 @@ public class SnapshotNode
         dtx = player.dtx;
         spd = player.spd;              
     }
+    /*
     public SnapshotNode(Enemies enemy , int turn)
     {
         EnemyTurn = turn;
@@ -32,5 +34,5 @@ public class SnapshotNode
         enemyRotation = enemy.transform.rotation.eulerAngles;
         Enmyspd = enemy.Enmyspd;
         Enmydmg = enemy.Enmydmg;
-    }
+    }*/
 }

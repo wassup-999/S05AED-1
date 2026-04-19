@@ -93,14 +93,9 @@ public class DoubleLinkedList<T> //: MonoBehaviour
         position.Next.SetPrev(null);
         position.SetNext(null);
         tail = position;
+        ReCount();
 
-        Count = 0;
-        Node<T> Evaluator = head;
-        while(position != null)
-        {
-            Count++;
-            Evaluator = Evaluator.Next;
-        }
+
     }
     public void ReCount()
     {
@@ -135,6 +130,9 @@ public class DoubleLinkedList<T> //: MonoBehaviour
             Evaluator = Evaluator.Prev;
         }
     }
+
+    /// //////////// Recursividad para recorrer la lista, no es tan eficiente como el metodo iterativo pero es una forma de hacerlo
+    
     public void TraverseInOrder(Node<T> Evaluator, Action<Node<T>> action)
     {
         if (Evaluator == null)
@@ -153,7 +151,7 @@ public class DoubleLinkedList<T> //: MonoBehaviour
             return;
         }
         action(Evaluator);
-        TraverseInOrder(Evaluator.Prev, action);    
+        TraverseInReverse(Evaluator.Prev, action);    
     }
 
 
