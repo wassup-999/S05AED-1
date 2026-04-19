@@ -19,7 +19,7 @@ public class DoubleLinkedList<T> //: MonoBehaviour
             head = newNode;
             tail = newNode;
         }
-        else if(head != null )
+        else if (head != null)
         {
             tail.SetNext(newNode);
             newNode.SetPrev(tail);
@@ -53,7 +53,6 @@ public class DoubleLinkedList<T> //: MonoBehaviour
             Evaluator.SetNext(null);
             tail = Evaluator;
 
-
             Count--;
         }
        
@@ -62,8 +61,7 @@ public class DoubleLinkedList<T> //: MonoBehaviour
     //-> O(1)
     public virtual void RemoveFirst()
     {
-
-        if (Count <= 1)
+if (Count <= 1)
         {
             head = null;
             tail = null;
@@ -75,8 +73,6 @@ public class DoubleLinkedList<T> //: MonoBehaviour
         head.SetNext(null);
         head = Evaluator;
         Count--;
-
-
     }
     public virtual void RemoveFromPosition(Node<T> position)
     {
@@ -85,7 +81,7 @@ public class DoubleLinkedList<T> //: MonoBehaviour
             RemoveLast();
             return;
         }
-        if(position.Prev == head)
+        if(position == head)
         {
             RemoveFirst();
             return;
@@ -93,9 +89,8 @@ public class DoubleLinkedList<T> //: MonoBehaviour
         position.Next.SetPrev(null);
         position.SetNext(null);
         tail = position;
+
         ReCount();
-
-
     }
     public void ReCount()
     {

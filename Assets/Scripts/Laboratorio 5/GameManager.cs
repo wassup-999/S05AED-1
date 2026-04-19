@@ -6,14 +6,14 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager instance;
     public CustomDoubleLinkedList snapshotSystem =new();
     //public CustomDoubleLinkedListEnemy snapshotSystemEnemy = new();
     public Player player;
     //public Enemies enemies;
     private void Awake()
     {
-        Instance = this;
+        instance = this;
     }
 
     void Start()
