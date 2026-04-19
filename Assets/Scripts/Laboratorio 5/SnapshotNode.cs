@@ -8,7 +8,7 @@ public class SnapshotNode
     public Vector3 playerRotation;
     public int str;
     public int dtx;
-    public int spd;
+    public int spdbuf;
 
     
     //Enemy
@@ -26,7 +26,7 @@ public class SnapshotNode
         playerRotation = player.transform.rotation.eulerAngles;
         str = player.str;
         dtx = player.dtx;
-        spd = player.spd;              
+        spdbuf = player.spdbuf;              
     }
     
     public SnapshotNode(Enemies enemy , int turn)

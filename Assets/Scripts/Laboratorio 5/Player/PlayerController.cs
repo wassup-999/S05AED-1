@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Vector2 movInputs;
+    [SerializeField] private Vector2 moveInputs;
     public InputSystem_Actions inputActions;
+    public float rotationSpeed = 200f;
     public float moveSpeed = 1.5f;
     private void Awake()
     {
@@ -12,8 +13,8 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         inputActions.Enable();
-        inputActions.Player.Move.performed += ctx => movInputs = ctx.ReadValue<Vector2>();
-        inputActions.Player.Move.canceled += ctx => movInputs = Vector2.zero;
+        inputActions.Player.Move.performed += ctx => moveInputs = ctx.ReadValue<Vector2>();
+        inputActions.Player.Move.canceled += ctx => moveInputs = Vector2.zero;
     }
     void Start()
     {
@@ -27,7 +28,8 @@ public class PlayerController : MonoBehaviour
     }
     public void OnMove()
     {
-        Vector3 movement = new Vector3(movInputs.x, 0, movInputs.y);
-        transform.Translate(movement * moveSpeed * Time.deltaTime) ;
+        transform.Rotate(Vector3.up * moveInputs.x * rotationSpeed * Time.deltaTime);
+        Vector3 moveDir = transform.forward * moveSpeed * moveInputs.y;
+        PlayerManager.Instance.characterController.Move(moveDir * Time.deltaTime);
     }
 }

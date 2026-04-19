@@ -51,7 +51,7 @@ public class CustomDoubleLinkedList : DoubleLinkedList<SnapshotNode>
         player.transform.eulerAngles = pointer.Value.playerRotation;
         player.str = pointer.Value.str;
         player.dtx = pointer.Value.dtx;
-        player.spd = pointer.Value.spd;
+        player.spdbuf = pointer.Value.spdbuf;
 
     }
 }
