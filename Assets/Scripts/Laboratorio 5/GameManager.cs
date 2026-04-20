@@ -30,6 +30,29 @@ public class GameManager : MonoBehaviour
     {      
         snapshotSystem.SaveTurn();        
     }
+    public void LoadTurnPlayer()
+    {
+        snapshotSystem.LoadTurn(player);
+    }
+
+    [Button]
+    public void NexTurnPlayer()
+    {
+
+        snapshotSystem.MoveForward();
+        LoadTurnPlayer();
+    }
+    [Button]
+    public void PrevTurnPlayer()
+    {
+        snapshotSystem.MoveBackwards();
+        LoadTurnPlayer();
+    }
+
+    /// 
+    /// 
+    /// 
+
 
     [Button]
     public void SaveTurnEnemy()
@@ -37,43 +60,22 @@ public class GameManager : MonoBehaviour
         snapshotSystemEnemy.SaveTurnEnemy();
     }
 
-    public void LoadTurnPlayer()
-    {
-        snapshotSystem.LoadTurn(player);
-    }
     public void LoadTurnEnemy()
     {
         snapshotSystemEnemy.LoadTurn(enemies);
     }
-
-    [Button]
-    public void NexTurnPlayer()
-    {
-        
-        snapshotSystem.MoveForward();
-        LoadTurnPlayer();
-    }
+   
     [Button]
     public void NexTurnEnemy()
     {              
         snapshotSystemEnemy.MoveForwardEnemy();
         LoadTurnEnemy();
     }
-
-
-
-    [Button]
-    public void PrevTurnPlayer()
-    {       
-        snapshotSystem.MoveBackwards();      
-        LoadTurnPlayer();
-    }
+    
     [Button]
     public void PrevTurnEnemy()
     {       
         snapshotSystemEnemy.MoveBackwardsEnemy();
         LoadTurnEnemy();
     }
-
-
 }

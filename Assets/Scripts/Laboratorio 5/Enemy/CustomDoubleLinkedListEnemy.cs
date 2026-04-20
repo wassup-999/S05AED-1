@@ -42,7 +42,7 @@ public class CustomDoubleLinkedListEnemy : DoubleLinkedList<SnapshotNode>
     }
     public void LoadTurn(Enemy enemy)
     {
-        Debug.Log("Cargando el Turno" + pointer.Value.EnemyTurn);
+        Debug.Log("Loading Enemy Turn: " + pointer.Value.EnemyTurn);
         enemy.transform.position = pointer.Value.enemyPosition;
         enemy.transform.eulerAngles = pointer.Value.enemyRotation;
         enemy.Enmydmg = pointer.Value.Enmydmg;

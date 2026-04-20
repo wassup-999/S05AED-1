@@ -46,7 +46,7 @@ public class CustomDoubleLinkedList : DoubleLinkedList<SnapshotNode>
 
     public void LoadTurn(Player player)
     {
-        Debug.Log("Cargando el turno: " + pointer.Value.Turn);
+        Debug.Log("Loading Player Turn: " + pointer.Value.Turn);
         player.transform.position = pointer.Value.playerPosition;
         player.transform.eulerAngles = pointer.Value.playerRotation;
         player.str = pointer.Value.str;
